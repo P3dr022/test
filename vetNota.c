@@ -41,7 +41,13 @@ void imprime_aprov(float v1[], float v2[], float v3[], int tam[]){
             cont++;
         }
     }
-    return cont;
+}
+int busca( int numprocurado, float vet){
+    for(int i=0;i<tam;i++){
+        if(numprocurado==vet[i]){
+            return i;
+        }
+    }
 }
 
 int main(){
