@@ -39,7 +39,7 @@ void encontraRotasAux(int matriz[TF][TF], int origem, int destino, int visitado[
     vetAtual[vetprox] = origem;
     vetprox++;
 
-    if (origem == destino) {
+    if (origem == destino) { // Se nó atual é o destino, então é imprimido o caminho.
         if (custoAtual < menorCusto) {
             menorCusto = custoAtual;
             tamanhoMelhorCaminho = vetprox;
@@ -52,20 +52,21 @@ void encontraRotasAux(int matriz[TF][TF], int origem, int destino, int visitado[
         for (int i = 0; i < vetprox; i++) {
             printf("%s", regiao[vetAtual[i]]);
             if (i < vetprox - 1) {
-                printf(" -> ");
+                printf(" -> "); 
             }
         }
         printf(" | Custo total: %d\n", custoAtual);
     } else {
         for (int i = 0; i < TF; i++) {
-            if (!visitado[i] && matriz[origem][i] != 0) {
-                encontraRotasAux(matriz, i, destino, visitado, vetAtual, vetprox, custoAtual + matriz[origem][i], regiao);
+            if (!visitado[i] && matriz[origem][i] != 0) { //
+                encontraRotasAux(matriz, i, destino, visitado, vetAtual, vetprox, custoAtual + matriz[origem][i], regiao); 
+                // A função chama a si mesmo para poder percorrer novos caminhos.
             }
         }
     }
 
-    vetprox--;
-    visitado[origem] = 0;
+    vetprox--; // desfaz a adição do nó do caminho.
+    visitado[origem] = 0; // desmarcar o nó atual como "visitado".
 }
 
 void encontraRota(int matriz[TF][TF], int origem, int destino, char* regiao[]) {
