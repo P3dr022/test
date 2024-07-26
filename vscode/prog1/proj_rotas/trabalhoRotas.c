@@ -1,7 +1,7 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <limits.h>
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+#include<limits.h>
 
 #define TF 5
 
@@ -10,7 +10,7 @@ int melhorCaminho[TF];
 int tamanhoMelhorCaminho = 0;
 
 void leitura(int matriz[TF][TF]) {
-    for (int i = 0; i < TF; i++) {
+    for (int i = 0; i < TF; i++) {  
         for (int j = 0; j < TF; j++) {
             printf("\nDigite os elementos de custo da posição %dx%d: ", i + 1, j + 1);
             scanf("%d", &matriz[i][j]);
@@ -129,6 +129,7 @@ int main() {
                 exibe(matriz, regiao, colunas);
                 break;
             case 3:
+                exibe(matriz,regiao,colunas)
                 printf("\nDigite a origem (0-Norte, 1-Sul, 2-Nordeste, 3-Centro-Oeste, 4-Sudeste): ");
                 scanf("%d", &origem);
                 printf("Digite o destino (0-Norte, 1-Sul, 2-Nordeste, 3-Centro-Oeste, 4-Sudeste): ");
