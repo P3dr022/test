@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "idade.C": "cpp",
+        "stdio.h": "c"
+    }
+}
